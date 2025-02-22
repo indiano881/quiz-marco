@@ -17,8 +17,9 @@ app.get('/nonce/:address', (req, res) => {
     const nonce = Math.floor(Math.random() * 1000000).toString();
     nonces[address.toLowerCase()] = nonce;
     res.json({ nonce });
+    console.log(nonces[address.toLowerCase()])
     console.log('NONCE'+ nonce)
-    console.log('NONCEs'+ nonces)
+    console.log( nonces)
   });
 app.post('/verify/', (req, res)=> {
     try {
